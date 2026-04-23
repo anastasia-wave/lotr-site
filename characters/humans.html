@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Люди — Мир Средиземья</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #101010;
+            color: white;
+        }
+
+        .back {
+            display: inline-block;
+            margin: 20px;
+            color: white;
+            text-decoration: none;
+            background-color: #333;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+        .back:hover {
+            background-color: #555;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 10px 0 30px;
+        }
+
+        .characters-list {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .character-button {
+            width: 100%;
+            text-align: left;
+            padding: 16px 20px;
+            font-size: 22px;
+            background-color: #1f1f1f;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .character-button:hover {
+            background-color: #2e2e2e;
+        }
+
+        .character-content {
+            display: none;
+            background-color: #181818;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .character-gallery {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .character-gallery img {
+            width: 220px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .character-description {
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        @media (max-width: 700px) {
+            .character-gallery img {
+                width: 100%;
+                height: 190px;
+            }
+
+            .character-button {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a class="back" href="characters.html">← К расам</a>
+
+    <h1>Люди</h1>
+
+    <div class="characters-list">
+
+        <button class="character-button" onclick="toggleCharacter('aragorn')">Арагорн</button>
+        <div class="character-content" id="aragorn">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.aragorn.jpg">
+            </div>
+            <div class="character-description">
+                Арагорн — наследник королей Гондора и один из главных героев трилогии
+                «Властелин колец». В начале истории он известен как следопыт Странник,
+                а затем принимает своё предназначение и становится королём.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('boromir')">Боромир</button>
+        <div class="character-content" id="boromir">
+            <div class="character-gallery">
+                <img src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?w=800" alt="Боромир 1">
+                <img src="https://images.unsplash.com/photo-1506795660185-2f2c5f6b0f0e?w=800" alt="Боромир 2">
+            </div>
+            <div class="character-description">
+                Боромир — сын наместника Гондора и член Братства кольца.
+                Он является сильным воином, искренне желающим защитить свой народ,
+                однако оказывается под искушением силы Кольца.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('faramir')">Фарамир</button>
+        <div class="character-content" id="faramir">
+            <div class="character-gallery">
+                <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?w=800" alt="Фарамир 1">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800" alt="Фарамир 2">
+            </div>
+            <div class="character-description">
+                Фарамир — брат Боромира, благородный и рассудительный воин Гондора.
+                В отличие от многих других, он способен противостоять искушению Кольца
+                и остаётся верен долгу и справедливости.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('eowyn')">Эовин</button>
+        <div class="character-content" id="eowyn">
+            <div class="character-gallery">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800" alt="Эовин 1">
+                <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=800" alt="Эовин 2">
+            </div>
+            <div class="character-description">
+                Эовин — благородная женщина из Рохана, племянница короля Теодена.
+                Она стремится не оставаться в стороне от войны и проявляет мужество
+                в одном из самых важных сражений истории Средиземья.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('theoden')">Теоден</button>
+        <div class="character-content" id="theoden">
+            <div class="character-gallery">
+                <img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=800" alt="Теоден 1">
+                <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=800" alt="Теоден 2">
+            </div>
+            <div class="character-description">
+                Теоден — король Рохана. После освобождения от влияния Сарумана
+                он вновь становится сильным правителем и ведёт свой народ в бой
+                против сил тьмы.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('bard')">Бард Лучник</button>
+        <div class="character-content" id="bard">
+            <div class="character-gallery">
+                <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=800" alt="Бард 1">
+                <img src="https://images.unsplash.com/photo-1500622944204-b135684e99fd?w=800" alt="Бард 2">
+            </div>
+            <div class="character-description">
+                Бард — человек из Озёрного города, сыгравший решающую роль
+                в событиях трилогии «Хоббит». Именно он сражается со Смаугом
+                и становится важным лидером людей.
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleCharacter(id) {
+            const block = document.getElementById(id);
+
+            if (block.style.display === "block") {
+                block.style.display = "none";
+            } else {
+                block.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

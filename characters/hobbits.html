@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хоббиты — Мир Средиземья</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #101010;
+            color: white;
+        }
+
+        .back {
+            display: inline-block;
+            margin: 20px;
+            color: white;
+            text-decoration: none;
+            background-color: #333;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+        .back:hover {
+            background-color: #555;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 10px 0 30px;
+        }
+
+        .characters-list {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .character-button {
+            width: 100%;
+            text-align: left;
+            padding: 16px 20px;
+            font-size: 22px;
+            background-color: #1f1f1f;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .character-button:hover {
+            background-color: #2e2e2e;
+        }
+
+        .character-content {
+            display: none;
+            background-color: #181818;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: -4px;
+        }
+
+        .character-gallery {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .character-gallery img {
+            width: 220px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .character-description {
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        @media (max-width: 700px) {
+            .character-gallery img {
+                width: 100%;
+                height: 190px;
+            }
+
+            .character-button {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="back" href="characters.html">← К расам</a>
+
+    <h1>Хоббиты</h1>
+
+    <div class="characters-list">
+        <button class="character-button" onclick="toggleCharacter('bilbo')">Бильбо Бэггинс</button>
+        <div class="character-content" id="bilbo">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.bilbo.png">
+            </div>
+            <div class="character-description">
+                Бильбо Бэггинс — хоббит из Шира, главный герой трилогии «Хоббит».
+                Именно его путешествие к Одинокой горе становится началом больших событий в истории Средиземья.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('frodo')">Фродо Бэггинс</button>
+        <div class="character-content" id="frodo">
+            <div class="character-gallery">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Фродо 1">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800" alt="Фродо 2">
+            </div>
+            <div class="character-description">
+                Фродо Бэггинс — племянник Бильбо и носитель Кольца Всевластия.
+                Его путь в Мордор становится центральной линией трилогии «Властелин колец».
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('sam')">Сэмwise Гэмджи</button>
+        <div class="character-content" id="sam">
+            <div class="character-gallery">
+                <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800" alt="Сэм 1">
+                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800" alt="Сэм 2">
+            </div>
+            <div class="character-description">
+                Сэмwise Гэмджи — верный друг Фродо, один из самых преданных и мужественных героев истории Средиземья.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('smeagol')">Смеагол</button>
+        <div class="character-content" id="smeagol">
+            <div class="character-gallery">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800">
+            </div>
+            <div class="character-description">
+                Смеагол — хоббит, живший задолго до событий «Властелина колец». 
+                Найдя Кольцо Всевластия, он поддался его влиянию и постепенно изменился, 
+                утратив свою прежнюю сущность.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('gollum')">Голлум</button>
+        <div class="character-content" id="gollum">
+            <div class="character-gallery">
+                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800">
+            </div>
+            <div class="character-description">
+                Голлум — существо, в которое превратился Смеагол под воздействием Кольца. 
+                Он одержим «прелестью» и играет важную роль в судьбе Фродо и уничтожении Кольца.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCharacter(id) {
+            const block = document.getElementById(id);
+
+            if (block.style.display === "block") {
+                block.style.display = "none";
+            } else {
+                block.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

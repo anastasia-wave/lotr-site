@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книги — Мир Средиземья</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #101010;
+            color: white;
+        }
+
+        .back {
+            position: fixed;   
+            top: 20px; 
+            left: 20px;    
+
+            color: white;
+            text-decoration: none;
+            background-color: #333;
+            padding: 10px 18px;
+            border-radius: 8px;
+
+            z-index: 1000;   
+        }
+
+        .back:hover {
+            background-color: #555;
+        }
+
+        .page-title {
+            text-align: center;
+            margin: 10px 0 30px;
+            font-size: 42px;
+        }
+
+        .books-container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 0 auto 50px;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin: 35px 0 20px;
+            text-align: center;
+        }
+
+        .section-description {
+            max-width: 900px;
+            margin: 0 auto 25px;
+            text-align: center;
+            line-height: 1.7;
+            color: #d6d6d6;
+            font-size: 18px;
+        }
+
+        .book-card {
+            background-color: #181818;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 18px;
+            transition: 0.3s;
+        }
+
+        .book-card:hover {
+            background-color: #202020;
+        }
+
+        .book-title {
+            font-size: 28px;
+            margin: 0 0 10px;
+        }
+
+        .book-year {
+            color: #d2b56b;
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+
+        .book-text {
+            line-height: 1.7;
+            font-size: 18px;
+            color: #f1f1f1;
+        }
+
+        .note {
+            margin-top: 40px;
+            padding: 22px;
+            border-radius: 16px;
+            background-color: #151515;
+            border: 1px solid #2b2b2b;
+            line-height: 1.7;
+            color: #d6d6d6;
+            font-size: 17px;
+        }
+
+        @media (max-width: 700px) {
+            .page-title {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .book-title {
+                font-size: 22px;
+            }
+
+            .book-year,
+            .book-text,
+            .section-description,
+            .note {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a class="back" href="index.html">← На главную</a>
+
+    <h1 class="page-title">Книги Толкина о Средиземье</h1>
+
+    <div class="books-container">
+
+        <h2 class="section-title">Основные книги</h2>
+        <p class="section-description">
+            Ниже представлены основные произведения Дж. Р. Р. Толкина, напрямую связанные с историями
+            о Бильбо, Фродо и Кольце Всевластия.
+        </p>
+
+        <div class="book-card">
+            <h3 class="book-title">«Хоббит, или Туда и обратно»</h3>
+            <div class="book-year">1937 год</div>
+            <div class="book-text">
+                Повесть о путешествии Бильбо Бэггинса вместе с гномами к Одинокой горе.
+                Именно с этой книги начинается история, из которой позже вырос весь мир
+                «Властелина колец».
+            </div>
+        </div>
+
+        <div class="book-card">
+            <h3 class="book-title">«Властелин колец: Братство Кольца»</h3>
+            <div class="book-year">1954 год</div>
+            <div class="book-text">
+                Первая часть трилогии «Властелин колец». В книге начинается путь Фродо Бэггинса
+                и формируется Братство Кольца.
+            </div>
+        </div>
+
+        <div class="book-card">
+            <h3 class="book-title">«Властелин колец: Две крепости»</h3>
+            <div class="book-year">1954 год</div>
+            <div class="book-text">
+                Вторая часть трилогии. История разделяется на несколько линий:
+                путь Фродо и Сэма, борьба за Рохан и усиление войны против сил Саурона.
+            </div>
+        </div>
+
+        <div class="book-card">
+            <h3 class="book-title">«Властелин колец: Возвращение короля»</h3>
+            <div class="book-year">1955 год</div>
+            <div class="book-text">
+                Заключительная часть трилогии. В ней завершается война Кольца
+                и определяется судьба Средиземья.
+            </div>
+        </div>
+
+        <h2 class="section-title">Дополнительные книги о легендариуме Средиземья</h2>
+        <p class="section-description">
+            Эти книги расширяют мир Средиземья, рассказывают о его древней истории,
+            героях прошлых эпох и происхождении многих событий, связанных со «Властелином колец».
+        </p>
+
+        <div class="book-card">
+            <h3 class="book-title">«Сильмариллион»</h3>
+            <div class="book-year">1977 год</div>
+            <div class="book-text">
+                Книга, опубликованная после смерти Толкина под редакцией Кристофера Толкина.
+                Описывает сотворение мира, древние войны, эльфийские народы, Моргота,
+                происхождение Сильмарилей и раннюю историю Арды.
+            </div>
+        </div>
+
+        <div class="book-card">
+            <h3 class="book-title">«Неоконченные предания Нуменора и Средиземья»</h3>
+            <div class="book-year">1980 год</div>
+            <div class="book-text">
+                Сборник текстов и материалов, раскрывающих дополнительные подробности
+                о Нуменоре, Гэндальфе, Исильдуре, Рохане, Гондоре и других частях мира Толкина.
+            </div>
+        </div>
+
+        <div class="book-card">
+            <h3 class="book-title">«Дети Хурина»</h3>
+            <div class="book-year">2007 год</div>
+            <div class="book-text">
+                Полноценное издание одной из самых трагических историй Первой эпохи,
+                подготовленное Кристофером Толкином на основе текстов Дж. Р. Р. Толкина.
+            </div>
+        </div>
+
+        <div class="book-card">
+            <h3 class="book-title">«Берен и Лутиэн»</h3>
+            <div class="book-year">2017 год</div>
+            <div class="book-text">
+                Книга о легендарной истории любви человека Берена и эльфийки Лутиэн.
+                Это один из важнейших сюжетов древней истории Средиземья.
+            </div>
+        </div>
+
+        <div class="book-card">
+            <h3 class="book-title">«Падение Гондолина»</h3>
+            <div class="book-year">2018 год</div>
+            <div class="book-text">
+                Отдельное издание одной из ключевых легенд Первой эпохи,
+                посвящённое великому скрытому городу эльфов и его падению.
+            </div>
+        </div>
+
+        <div class="book-card">
+            <h3 class="book-title">«Падение Нуменора»</h3>
+            <div class="book-year">2022 год</div>
+            <div class="book-text">
+                Книга, собранная из текстов Толкина и посвящённая истории Второй эпохи:
+                Нуменору, Саурону, Кольцам власти и событиям, предшествующим «Властелину колец».
+            </div>
+        </div>
+
+        <div class="note">
+            Важно учитывать, что «Хоббит» и трилогия «Властелин колец» были изданы при жизни Дж. Р. Р. Толкина.
+            Многие другие книги о Средиземье опубликованы после его смерти и подготовлены на основе рукописей
+            под редакцией Кристофера Толкина.
+        </div>
+
+    </div>
+
+</body>
+</html>

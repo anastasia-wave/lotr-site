@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Высшие существа — Мир Средиземья</title>
+</head>
+<body>
+
+    <a class="back" href="characters.html">← К расам</a>
+
+    <h1>Высшие существа</h1>
+
+    <div class="characters-list">
+
+        <button class="character-button" onclick="toggleCharacter('sauron')">Саурон</button>
+        <div class="character-content" id="sauron">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.sauron.jpg">
+            </div>
+            <div class="character-description">
+                Саурон — один из самых могущественных тёмных властелинов Средиземья.
+                Он создал Кольцо Всевластия и стремился подчинить себе все народы мира.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('melkor')">Мелькор</button>
+        <div class="character-content" id="melkor">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.melkor.jpg">
+            </div>
+            <div class="character-description">
+                Мелькор, также известный как Моргот, — первый и самый могущественный враг мира Арда.
+                Именно он стал источником множества бед и тьмы в древней истории.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('balrog')">Балрог</button>
+        <div class="character-content" id="balrog">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.balrog.jpg">
+            </div>
+            <div class="character-description">
+                Балрог — древнее огненное существо, служившее силам тьмы.
+                Один из балрогов скрывался в Мории и стал противником Гэндальфа.
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

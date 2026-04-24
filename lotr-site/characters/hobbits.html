@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хоббиты — Мир Средиземья</title>
+</head>
+<body>
+    <a class="back" href="characters.html">← К расам</a>
+
+    <h1>Хоббиты</h1>
+
+    <div class="characters-list">
+        <button class="character-button" onclick="toggleCharacter('bilbo')">Бильбо Бэггинс</button>
+        <div class="character-content" id="bilbo">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.bilbo.png">
+            </div>
+            <div class="character-description">
+                Бильбо Бэггинс — хоббит из Шира, главный герой трилогии «Хоббит».
+                Именно его путешествие к Одинокой горе становится началом больших событий в истории Средиземья.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('frodo')">Фродо Бэггинс</button>
+        <div class="character-content" id="frodo">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.frodo.JPG">
+            </div>
+            <div class="character-description">
+                Фродо Бэггинс — племянник Бильбо и носитель Кольца Всевластия.
+                Его путь в Мордор становится центральной линией трилогии «Властелин колец».
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('sam')">Сэмвайз Гэмджи</button>
+        <div class="character-content" id="sam">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.sam.JPG">
+            </div>
+            <div class="character-description">
+                Сэмвайз Гэмджи — верный друг Фродо, один из самых преданных и мужественных героев истории Средиземья.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('smeagol')">Смеагол</button>
+        <div class="character-content" id="smeagol">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.smeagol.jpg">
+            </div>
+            <div class="character-description">
+                Смеагол — хоббит, живший задолго до событий «Властелина колец». 
+                Найдя Кольцо Всевластия, он поддался его влиянию и постепенно изменился, 
+                утратив свою прежнюю сущность.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('gollum')">Голлум</button>
+        <div class="character-content" id="gollum">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.gollum.JPG">
+            </div>
+            <div class="character-description">
+                Голлум — существо, в которое превратился Смеагол под воздействием Кольца. 
+                Он одержим «прелестью» и играет важную роль в судьбе Фродо и уничтожении Кольца.
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

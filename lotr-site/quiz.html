@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест — Кто ты в Средиземье</title>
+</head>
+<body class="quiz-page">
+
+    <a class="back" href="index.html">← На главную</a>
+
+    <h1>Кто ты в Средиземье?</h1>
+
+    <div class="quiz" id="quiz"></div>
+    <div class="result" id="result"></div>
+
+    <script>
+        const questions = [
+            {
+                text: "Какой жизненный путь тебе ближе?",
+                answers: [
+                    { text: "Тихая жизнь дома, пока приключение само не постучит в дверь", type: "bilbo" },
+                    { text: "Тяжёлый путь ради высокой цели", type: "frodo" },
+                    { text: "Одержимость одной-единственной вещью", type: "gollum" },
+                    { text: "Подчинение мира своей воле", type: "sauron" },
+                    { text: "Помощь другим и направление их по верному пути", type: "gandalf" },
+                    { text: "Поиск знаний и контроля над происходящим", type: "saruman" },
+                    { text: "Свобода, движение и точность в действиях", type: "legolas" },
+                    { text: "Возвращение утраченного наследия", type: "thorin" },
+                    { text: "Владение богатством и силой", type: "smaug" }
+                ]
+            },
+            {
+                text: "Что для тебя важнее всего?",
+                answers: [
+                    { text: "Порядок и расчёт", type: "saruman" },
+                    { text: "Свобода и честь", type: "legolas" },
+                    { text: "Абсолютная власть", type: "sauron" },
+                    { text: "То, чем я одержим", type: "gollum" },
+                    { text: "Род и наследие", type: "thorin" },
+                    { text: "Сокровища", type: "smaug" },
+                    { text: "Верность долгу", type: "frodo" },
+                    { text: "Мудрость", type: "gandalf" },
+                    { text: "Уют и спокойствие", type: "bilbo" }
+                ]
+            },
+            {
+                text: "Как ты обычно принимаешь решения?",
+                answers: [
+                    { text: "С учётом общего блага", type: "gandalf" },
+                    { text: "Быстро и уверенно", type: "legolas" },
+                    { text: "С позиции превосходства", type: "smaug" },
+                    { text: "Так, как выгодно мне и моей цели", type: "sauron" },
+                    { text: "Гордо и упрямо", type: "thorin" },
+                    { text: "Холодно и стратегически", type: "saruman" },
+                    { text: "Через внутреннюю борьбу, но ради правильного выбора", type: "frodo" },
+                    { text: "Осторожно, но могу неожиданно решиться", type: "bilbo" },
+                    { text: "Под влиянием своих зависимостей и страхов", type: "gollum" }
+                ]
+            },
+            {
+                text: "Как ты ведёшь себя в конфликте?",
+                answers: [
+                    { text: "Иду напролом", type: "thorin" },
+                    { text: "Терплю и иду до конца", type: "frodo" },
+                    { text: "Действую быстро, метко и точно", type: "legolas" },
+                    { text: "Подавляю противника", type: "sauron" },
+                    { text: "Запугиваю и уничтожаю", type: "smaug" },
+                    { text: "Манипулирую и использую ситуацию", type: "saruman" },
+                    { text: "Хитрю и выкручиваюсь", type: "gollum" },
+                    { text: "Предпочитаю избежать его, но могу проявить смелость", type: "bilbo" },
+                    { text: "Стараюсь остановить зло и поддержать союзников", type: "gandalf" }
+                ]
+            },
+            {
+                text: "Какое качество тебя описывает лучше всего?",
+                answers: [
+                    { text: "Могущество", type: "sauron" },
+                    { text: "Мудрость", type: "gandalf" },
+                    { text: "Стойкость", type: "frodo" },
+                    { text: "Любознательность", type: "bilbo" },
+                    { text: "Одержимость", type: "gollum" },
+                    { text: "Гордость", type: "thorin" },
+                    { text: "Ловкость", type: "legolas" },
+                    { text: "Амбициозность", type: "saruman" },
+                    { text: "Величие", type: "smaug" }
+                ]
+            },
+            {
+                text: "Что тебе ближе как место жизни?",
+                answers: [
+                    { text: "Гора, полная золота", type: "smaug" },
+                    { text: "Мрачная крепость, внушающая страх", type: "sauron" },
+                    { text: "Место, откуда можно наблюдать и направлять", type: "gandalf" },
+                    { text: "Башня, в которой всё под контролем", type: "saruman" },
+                    { text: "Лес, наполненный жизнью и свободой", type: "legolas" },
+                    { text: "Любое место, если там есть смысл продолжать путь", type: "frodo" },
+                    { text: "Каменные залы древнего королевства", type: "thorin" },
+                    { text: "Тёмные укромные пещеры", type: "gollum" },
+                    { text: "Небольшой уютный дом среди зелени", type: "bilbo" }
+                ]
+            },
+            {
+                text: "Как ты относишься к власти?",
+                answers: [
+                    { text: "Мне она не особенно нужна", type: "bilbo" },
+                    { text: "Она опасна и легко может испортить человека", type: "frodo" },
+                    { text: "Я зависим от того, что даёт силу", type: "gollum" },
+                    { text: "Я стремлюсь к абсолютной власти", type: "sauron" },
+                    { text: "Её нужно использовать ответственно", type: "gandalf" },
+                    { text: "Её нужно брать в свои руки, если можешь", type: "saruman" },
+                    { text: "Лучше свобода, чем власть", type: "legolas" },
+                    { text: "Власть важна, если она законна и связана с наследием", type: "thorin" },
+                    { text: "Власть естественна для сильнейшего", type: "smaug" }
+                ]
+            },
+            {
+                text: "Кто ты в команде?",
+                answers: [
+                    { text: "Наставник и лидер", type: "gandalf" },
+                    { text: "Стратег, который считает себя самым умным", type: "saruman" },
+                    { text: "Упрямый лидер с сильной целью", type: "thorin" },
+                    { text: "Тот, кто стремится всех подчинить", type: "sauron" },
+                    { text: "Неожиданно полезный участник", type: "bilbo" },
+                    { text: "Тот, кто несёт на себе самый тяжёлый груз", type: "frodo" },
+                    { text: "Опасная сила, которой лучше не мешать", type: "smaug" },
+                    { text: "Непредсказуемый союзник", type: "gollum" },
+                    { text: "Быстрый и надёжный боец", type: "legolas" }
+                ]
+            },
+            {
+                text: "Что тебя может сильнее всего сломать?",
+                answers: [
+                    { text: "Потеря чести и права на наследие", type: "thorin" },
+                    { text: "Невыносимая тяжесть ответственности", type: "frodo" },
+                    { text: "Лишение богатства и превосходства", type: "smaug" },
+                    { text: "Предательство союзников или природы", type: "legolas" },
+                    { text: "Поражение и утрата контроля", type: "sauron" },
+                    { text: "Понимание, что тебя переиграли", type: "saruman" },
+                    { text: "Падение надежды у других", type: "gandalf" },
+                    { text: "Потеря дома и привычного мира", type: "bilbo" },
+                    { text: "Потеря предмета одержимости", type: "gollum" }
+                ]
+            },
+            {
+                text: "Какой итог тебе ближе всего?",
+                answers: [
+                    { text: "Вернуться домой уже другим человеком", type: "bilbo" },
+                    { text: "Покорить всё вокруг", type: "sauron" },
+                    { text: "Вернуть утраченное королевство", type: "thorin" },
+                    { text: "Достигнуть цели через знания и силу", type: "saruman" },
+                    { text: "Оставить после себя свет и надежду", type: "gandalf" },
+                    { text: "Исполнить миссию любой ценой", type: "frodo" },
+                    { text: "Сохранить верность себе и своим близким", type: "legolas" },
+                    { text: "Остаться пленником своей страсти", type: "gollum" },
+                    { text: "Охранять своё сокровище и внушать страх", type: "smaug" }
+                ]
+            }
+        ];
+
+        const results = {
+            bilbo: {
+                name: "Бильбо Бэггинс",
+                description: "В тебе сочетаются осторожность, любознательность и внутренняя смелость. Сначала ты можешь казаться человеком, который любит покой, но в нужный момент способен удивить решительностью."
+            },
+            frodo: {
+                name: "Фродо Бэггинс",
+                description: "Ты умеешь нести ответственность даже тогда, когда это очень тяжело. В тебе много стойкости, терпения и готовности идти до конца ради действительно важной цели."
+            },
+            gollum: {
+                name: "Голлум",
+                description: "Ты очень эмоционален, глубоко привязываешься к вещам и переживаниям и часто живёшь внутренними противоречиями. В тебе много хитрости, тревоги и сложной внутренней борьбы."
+            },
+            sauron: {
+                name: "Саурон",
+                description: "Ты стремишься к контролю, влиянию и максимальному результату. Тебе близки масштаб, сила и ощущение, что всё должно подчиняться мощной цели."
+            },
+            gandalf: {
+                name: "Гэндальф",
+                description: "Ты склонен направлять, поддерживать и видеть больше, чем другие. В тебе есть мудрость, внутренняя устойчивость и способность вести людей вперёд."
+            },
+            saruman: {
+                name: "Саруман",
+                description: "Ты любишь стратегию, расчёт и интеллектуальное превосходство. Ты стремишься понимать систему целиком и часто хочешь контролировать её через знания."
+            },
+            legolas: {
+                name: "Леголас",
+                description: "Ты точный, быстрый и свободолюбивый. В тебе сочетаются изящество, верность и способность действовать хладнокровно даже в сложной ситуации."
+            },
+            thorin: {
+                name: "Торин Дубощит",
+                description: "Ты гордый, волевой и очень серьёзно относишься к чести, цели и своему месту в жизни. В тебе много лидерской силы и упрямства."
+            },
+            smaug: {
+                name: "Смауг",
+                description: "Ты яркий, мощный и любишь ощущение собственного превосходства. Тебе близки масштаб, впечатление, которое ты производишь, и чувство, что ты контролируешь ситуацию."
+            }
+        };
+
+        let scores = {};
+        let currentQuestion = 0;
+
+        const quiz = document.getElementById("quiz");
+        const result = document.getElementById("result");
+
+        function showQuestion() {
+            const q = questions[currentQuestion];
+
+            quiz.innerHTML = `
+                <div class="progress">Вопрос ${currentQuestion + 1} из ${questions.length}</div>
+                <div class="question-box">
+                    <h2 class="question-title">${q.text}</h2>
+                    <div class="answers">
+                        ${q.answers.map(answer =>
+                            `<button onclick="chooseAnswer('${answer.type}')">${answer.text}</button>`
+                        ).join("")}
+                    </div>
+                </div>
+            `;
+        }
+
+        function chooseAnswer(type) {
+            scores[type] = (scores[type] || 0) + 1;
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+                showQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            let maxScore = -1;
+            let finalType = "bilbo";
+
+            for (const key in scores) {
+                if (scores[key] > maxScore) {
+                    maxScore = scores[key];
+                    finalType = key;
+                }
+            }
+
+            quiz.innerHTML = "";
+
+            result.innerHTML = `
+                <div class="result-box">
+                    <h2>Твой результат — ${results[finalType].name}</h2>
+                    <p>${results[finalType].description}</p>
+                    <button class="restart-btn" onclick="restartQuiz()">Пройти ещё раз</button>
+                </div>
+            `;
+        }
+
+        function restartQuiz() {
+            scores = {};
+            currentQuestion = 0;
+            result.innerHTML = "";
+            showQuestion();
+        }
+
+        showQuestion();
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

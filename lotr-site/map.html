@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта Средиземья — Мир Средиземья</title>
+</head>
+<body>
+
+    <a class="back" href="index.html">← На главную</a>
+
+    <h1 class="page-title">Карта Средиземья</h1>
+
+    <section class="map-section">
+        <div class="map-hint">
+            Используйте колесико мыши для увеличения и уменьшения карты. Перетаскивайте карту мышью. Наведите курсор на область и нажмите, чтобы открыть описание.
+        </div>
+
+        <div class="map-wrapper" id="mapWrapper">
+            <div class="map-stage" id="mapStage">
+                <div class="map-image-box">
+                    <img class="map-image" src="img/map.jpg" alt="Карта Средиземья">
+
+                    <div class="region" data-region="shire" style="left: 300px; top: 170px; width: 185px; height: 145px;"></div>
+                    <div class="region" data-region="rivendell" style="left: 640px; top: 205px; width: 150px; height: 110px;"></div>
+                    <div class="region" data-region="mirkwood" style="left: 965px; top: 155px; width: 240px; height: 360px;"></div>
+                    <div class="region" data-region="erebor" style="left: 1160px; top: 110px; width: 190px; height: 135px;"></div>
+                    <div class="region" data-region="rohan" style="left: 700px; top: 470px; width: 240px; height: 150px;"></div>
+                    <div class="region" data-region="gondor" style="left: 710px; top: 640px; width: 310px; height: 190px;"></div>
+                    <div class="region" data-region="mordor" style="left: 1020px; top: 605px; width: 280px; height: 170px;"></div>
+                    <div class="region" data-region="fangorn" style="left: 770px; top: 500px; width: 150px; height: 120px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button type="button" id="zoomIn">Увеличить</button>
+            <button type="button" id="zoomOut">Уменьшить</button>
+            <button type="button" id="resetView">Сбросить вид</button>
+        </div>
+    </section>
+
+    <section class="info-panel" id="infoPanel">
+        <h2>Выберите область на карте</h2>
+        <p class="info-placeholder">
+            Пока используется временная карта на основе текущего изображения. Позже здесь будет подключена упрощённая SVG-карта с точными границами областей.
+        </p>
+    </section>
+
+    <script>
+        const regionData = {
+            shire: {
+                title: "Шир",
+                description: "Шир — родина хоббитов и одно из самых мирных мест Средиземья. Именно отсюда начинается путь Бильбо в «Хоббите» и путешествие Фродо во «Властелине колец».",
+                places: [
+                    "Хоббитон",
+                    "Бэг-Энд",
+                    "Мичел Делвинг",
+                    "Байуотер"
+                ]
+            },
+            rivendell: {
+                title: "Ривенделл",
+                description: "Ривенделл — эльфийская обитель Элронда, важное место отдыха, совета и принятия решений. Здесь герои получают помощь и временное убежище.",
+                places: [
+                    "Дом Элронда",
+                    "Долина Ривенделла",
+                    "Бруинен",
+                    "Высокий перевал"
+                ]
+            },
+            mirkwood: {
+                title: "Лихолесье",
+                description: "Лихолесье — огромный и мрачный лес на востоке карты. В истории «Хоббита» это один из самых опасных участков пути отряда гномов и Бильбо.",
+                places: [
+                    "Дворец Трандуила",
+                    "Лесная река",
+                    "Дол Гулдур",
+                    "Тёмные тропы леса"
+                ]
+            },
+            erebor: {
+                title: "Эребор и окрестности",
+                description: "Эребор, или Одинокая гора, является главным пунктом назначения в трилогии «Хоббит». Здесь находится древнее королевство гномов и сокровища, захваченные Смаугом.",
+                places: [
+                    "Одинокая гора",
+                    "Дейл",
+                    "Эсгарот",
+                    "Железные холмы"
+                ]
+            },
+            rohan: {
+                title: "Рохан",
+                description: "Рохан — страна всадников и одно из главных королевств людей в трилогии «Властелин колец». Область играет ключевую роль в войне против Саурона.",
+                places: [
+                    "Эдорас",
+                    "Хельмова Падь",
+                    "Вестфолд",
+                    "Равнины Рохана"
+                ]
+            },
+            gondor: {
+                title: "Гондор",
+                description: "Гондор — одно из самых могущественных человеческих королевств Средиземья. Именно здесь разворачиваются важнейшие события финала войны Кольца.",
+                places: [
+                    "Минас Тирит",
+                    "Осгилиат",
+                    "Дол Амрот",
+                    "Пеленнорские поля"
+                ]
+            },
+            mordor: {
+                title: "Мордор",
+                description: "Мордор — земля Саурона, окружённая горами и насыщенная символами тьмы. Именно сюда должен добраться Фродо, чтобы уничтожить Кольцо Всевластия.",
+                places: [
+                    "Барад-дур",
+                    "Ородруин",
+                    "Минас Моргул",
+                    "Чёрные врата",
+                    "Нурн"
+                ]
+            },
+            fangorn: {
+                title: "Фангорн",
+                description: "Фангорн — древний лес энтов, связанный с Древобородом и событиями вокруг Изенгарда. Это одно из самых старых и таинственных мест Средиземья.",
+                places: [
+                    "Лес Фангорн",
+                    "Область энтов",
+                    "Пути к Изенгарду",
+                    "Места стоянки Древоборода"
+                ]
+            }
+        };
+
+        const infoPanel = document.getElementById("infoPanel");
+        const regions = document.querySelectorAll(".region");
+
+        regions.forEach(region => {
+            region.addEventListener("click", () => {
+                regions.forEach(r => r.classList.remove("active"));
+                region.classList.add("active");
+
+                const key = region.dataset.region;
+                const data = regionData[key];
+
+                if (!data) return;
+
+                infoPanel.innerHTML = `
+                    <h2>${data.title}</h2>
+                    <p>${data.description}</p>
+                    <p><strong>Основные объекты:</strong></p>
+                    <ul>
+                        ${data.places.map(place => `<li>${place}</li>`).join("")}
+                    </ul>
+                `;
+            });
+        });
+
+        const mapWrapper = document.getElementById("mapWrapper");
+        const mapStage = document.getElementById("mapStage");
+
+        let scale = 0.6;
+        let minScale = 0.45;
+        let maxScale = 2.2;
+
+        let translateX = 0;
+        let translateY = 0;
+
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+
+        function updateTransform() {
+            mapStage.style.transform = `
+                translate(-50%, -50%)
+                translate(${translateX}px, ${translateY}px)
+                scale(${scale})
+            `;
+        }
+
+        function zoomAt(clientX, clientY, delta) {
+            const rect = mapWrapper.getBoundingClientRect();
+
+            const mouseX = clientX - rect.left - mapWrapper.clientWidth / 2;
+            const mouseY = clientY - rect.top - mapWrapper.clientHeight / 2;
+
+            const prevScale = scale;
+            scale += delta;
+
+            if (scale < minScale) scale = minScale;
+            if (scale > maxScale) scale = maxScale;
+
+            const scaleRatio = scale / prevScale;
+
+            translateX = mouseX - (mouseX - translateX) * scaleRatio;
+            translateY = mouseY - (mouseY - translateY) * scaleRatio;
+
+            updateTransform();
+        }
+
+        mapWrapper.addEventListener("wheel", (event) => {
+            event.preventDefault();
+            const delta = event.deltaY < 0 ? 0.08 : -0.08;
+            zoomAt(event.clientX, event.clientY, delta);
+        }, { passive: false });
+
+        mapWrapper.addEventListener("mousedown", (event) => {
+            isDragging = true;
+            startX = event.clientX - translateX;
+            startY = event.clientY - translateY;
+        });
+
+        window.addEventListener("mousemove", (event) => {
+            if (!isDragging) return;
+
+            translateX = event.clientX - startX;
+            translateY = event.clientY - startY;
+            updateTransform();
+        });
+
+        window.addEventListener("mouseup", () => {
+            isDragging = false;
+        });
+
+        document.getElementById("zoomIn").addEventListener("click", () => {
+            const rect = mapWrapper.getBoundingClientRect();
+            zoomAt(rect.left + rect.width / 2, rect.top + rect.height / 2, 0.12);
+        });
+
+        document.getElementById("zoomOut").addEventListener("click", () => {
+            const rect = mapWrapper.getBoundingClientRect();
+            zoomAt(rect.left + rect.width / 2, rect.top + rect.height / 2, -0.12);
+        });
+
+        document.getElementById("resetView").addEventListener("click", () => {
+            scale = 0.6;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+        });
+
+        updateTransform();
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тролли — Мир Средиземья</title>
+</head>
+<body>
+
+    <a class="back" href="characters.html">← К расам</a>
+
+    <h1>Тролли</h1>
+
+    <div class="characters-list">
+
+        <button class="character-button" onclick="toggleCharacter('stone-trolls')">Каменные тролли</button>
+        <div class="character-content" id="stone-trolls">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.stonetrolls.jpg">
+            </div>
+            <div class="character-description">
+                Каменные тролли появляются в истории «Хоббита» как опасные и грубые существа,
+                нападающие на путников. По преданию, под солнечным светом они превращаются в камень.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('cave-troll')">Пещерный тролль</button>
+        <div class="character-content" id="cave-troll">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.cavetrolls.jpg">
+            </div>
+            <div class="character-description">
+                Пещерный тролль — один из самых запоминающихся противников Братства кольца
+                в Мории. Эти существа отличаются огромной физической силой и используются
+                силами тьмы как разрушительная боевая мощь.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('mountain-trolls')">Горные тролли</button>
+        <div class="character-content" id="mountain-trolls">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.mountaintrolls.jpg">
+            </div>
+            <div class="character-description">
+                Горные тролли — крупные и жестокие существа, обитающие в суровых областях Средиземья.
+                В различных битвах они выступают как тяжёлая сила, способная разрушать строения
+                и прорывать оборону.
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

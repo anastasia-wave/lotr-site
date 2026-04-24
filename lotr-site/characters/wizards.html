@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маги — Мир Средиземья</title>
+</head>
+
+<body>
+
+    <a class="back" href="characters.html">← К расам</a>
+
+    <h1>Маги</h1>
+
+    <div class="characters-list">
+
+        <button class="character-button" onclick="toggleCharacter('gandalf')">Гэндальф</button>
+        <div class="character-content" id="gandalf">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.gendalf.jpg">
+            </div>
+            <div class="character-description">
+                Гэндальф — один из пяти Истари, посланных в Средиземье для борьбы с силами зла. 
+                Один из ключевых героев всей истории.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('saruman')">Саруман</button>
+        <div class="character-content" id="saruman">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.saruman.JPG">
+            </div>
+            <div class="character-description">
+                Саруман — глава ордена магов, который впоследствии переходит на сторону зла.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('radagast')">Радагаст Бурый</button>
+        <div class="character-content" id="radagast">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.radagast.JPG">
+            </div>
+            <div class="character-description">
+                Радагаст — маг, близкий к природе, живущий в лесах и помогающий животным.
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,100 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Назгулы — Мир Средиземья</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #101010;
-            color: white;
-        }
-
-        .back {
-            display: inline-block;
-            margin: 20px;
-            color: white;
-            text-decoration: none;
-            background-color: #333;
-            padding: 10px 18px;
-            border-radius: 8px;
-        }
-
-        .back:hover {
-            background-color: #555;
-        }
-
-        h1 {
-            text-align: center;
-            margin: 10px 0 30px;
-        }
-
-        .characters-list {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .character-button {
-            width: 100%;
-            text-align: left;
-            padding: 16px 20px;
-            font-size: 22px;
-            background-color: #1f1f1f;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .character-button:hover {
-            background-color: #2e2e2e;
-        }
-
-        .character-content {
-            display: none;
-            background-color: #181818;
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-        .character-gallery {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 18px;
-        }
-
-        .character-gallery img {
-            width: 220px;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .character-description {
-            line-height: 1.6;
-            font-size: 18px;
-        }
-
-        @media (max-width: 700px) {
-            .character-gallery img {
-                width: 100%;
-                height: 190px;
-            }
-
-            .character-button {
-                font-size: 20px;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -107,8 +17,7 @@
         <button class="character-button" onclick="toggleCharacter('witchking')">Король-чародей Ангмара</button>
         <div class="character-content" id="witchking">
             <div class="character-gallery">
-                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800" alt="Король-чародей 1">
-                <img src="https://images.unsplash.com/photo-1500622944204-b135684e99fd?w=800" alt="Король-чародей 2">
+                <img src="../img/characters/ch.kingangmar.jpg">
             </div>
             <div class="character-description">
                 Король-чародей Ангмара — предводитель назгулов и один из самых опасных
@@ -120,8 +29,7 @@
         <button class="character-button" onclick="toggleCharacter('nine')">Девять назгулов</button>
         <div class="character-content" id="nine">
             <div class="character-gallery">
-                <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=800" alt="Назгулы 1">
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800" alt="Назгулы 2">
+                <img src="../img/characters/ch.ninenazguls.jpg">
             </div>
             <div class="character-description">
                 Назгулы, или Девять призрачных королей, когда-то были людьми,
@@ -133,8 +41,7 @@
         <button class="character-button" onclick="toggleCharacter('fellbeast')">Назгулы на крылатых тварях</button>
         <div class="character-content" id="fellbeast">
             <div class="character-gallery">
-                <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=800" alt="Крылатые твари 1">
-                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800" alt="Крылатые твари 2">
+                <img src="../img/characters/ch.flynazguls.jpg">
             </div>
             <div class="character-description">
                 В поздних событиях «Властелина колец» назгулы появляются верхом
@@ -145,17 +52,6 @@
 
     </div>
 
-    <script>
-        function toggleCharacter(id) {
-            const block = document.getElementById(id);
-
-            if (block.style.display === "block") {
-                block.style.display = "none";
-            } else {
-                block.style.display = "block";
-            }
-        }
-    </script>
-
+    <script src="../js/script.js"></script>
 </body>
 </html>

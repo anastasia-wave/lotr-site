@@ -1,114 +1,45 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Гномы — Мир Средиземья</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            background-color: #101010;
-            color: white;
-        }
-
-        .back {
-            display: inline-block;
-            margin: 20px;
-            color: white;
-            text-decoration: none;
-            background-color: #333;
-            padding: 10px 18px;
-            border-radius: 8px;
-        }
-
-        .back:hover {
-            background-color: #555;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .characters-list {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .character-button {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 5px;
-            font-size: 20px;
-            background-color: #1f1f1f;
-            border: none;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        .character-button:hover {
-            background-color: #2e2e2e;
-        }
-
-        .character-content {
-            display: none;
-            background-color: #181818;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .character-gallery img {
-            width: 200px;
-            margin: 5px;
-            border-radius: 10px;
-        }
-    </style>
 </head>
 <body>
 
-<a class="back" href="characters.html">← К расам</a>
+    <a class="back" href="characters.html">← К расам</a>
 
-<h1>Гномы</h1>
+    <h1>Гномы</h1>
 
-<div class="characters-list">
+    <div class="characters-list">
 
-<button onclick="toggleCharacter('thorin')" class="character-button">Торин Дубощит</button>
-<div id="thorin" class="character-content">
-    <div class="character-gallery">
-        <img src="../img/characters/ch.torin.jpg">
+        <button onclick="toggleCharacter('thorin')" class="character-button">Торин Дубощит</button>
+        <div id="thorin" class="character-content">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.torin.jpg">
+            </div>
+            <p>Торин — наследник королевства Эребор, возглавляет поход к Одинокой горе.</p>
+        </div>
+
+        <button onclick="toggleCharacter('balin')" class="character-button">Балин</button>
+        <div id="balin" class="character-content">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.balin.JPG">
+            </div>
+            <p>Балин — мудрый и опытный гном, один из спутников Бильбо.</p>
+        </div>
+
+        <button onclick="toggleCharacter('gimli')" class="character-button">Гимли</button>
+        <div id="gimli" class="character-content">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.gimly.JPG">
+            </div>
+            <p>Гимли — представитель гномов в Братстве кольца, верный друг Леголаса.</p>
+        </div>
+
     </div>
-    <p>Торин — наследник королевства Эребор, возглавляет поход к Одинокой горе.</p>
-</div>
 
-<button onclick="toggleCharacter('balin')" class="character-button">Балин</button>
-<div id="balin" class="character-content">
-    <div class="character-gallery">
-        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800">
-    </div>
-    <p>Балин — мудрый и опытный гном, один из спутников Бильбо.</p>
-</div>
-
-<button onclick="toggleCharacter('gimli')" class="character-button">Гимли</button>
-<div id="gimli" class="character-content">
-    <div class="character-gallery">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800">
-    </div>
-    <p>Гимли — представитель гномов в Братстве кольца, верный друг Леголаса.</p>
-</div>
-
-</div>
-
-<script>
-function toggleCharacter(id) {
-    const block = document.getElementById(id);
-    block.style.display = block.style.display === "block" ? "none" : "block";
-}
-</script>
-
+    <script src="../js/script.js"></script>
 </body>
 </html>

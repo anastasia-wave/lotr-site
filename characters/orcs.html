@@ -1,105 +1,45 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Орки — Мир Средиземья</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            background-color: #0d0d0d;
-            color: white;
-        }
-
-        .back {
-            display: inline-block;
-            margin: 20px;
-            color: white;
-            text-decoration: none;
-            background-color: #333;
-            padding: 10px 18px;
-            border-radius: 8px;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        .characters-list {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .character-button {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 5px;
-            font-size: 20px;
-            background-color: #1f1f1f;
-            border: none;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        .character-content {
-            display: none;
-            background-color: #181818;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .character-gallery img {
-            width: 200px;
-            margin: 5px;
-            border-radius: 10px;
-        }
-    </style>
 </head>
 <body>
 
-<a class="back" href="characters.html">← К расам</a>
+    <a class="back" href="characters.html">← К расам</a>
 
-<h1>Орки</h1>
+    <h1>Орки</h1>
 
-<div class="characters-list">
+    <div class="characters-list">
 
-<button onclick="toggleCharacter('azog')" class="character-button">Азог Осквернитель</button>
-<div id="azog" class="character-content">
-    <div class="character-gallery">
-        <img src="../img/characters/ch.azog.jpg">
+        <button onclick="toggleCharacter('azog')" class="character-button">Азог Осквернитель</button>
+        <div id="azog" class="character-content">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.azog.jpg">
+            </div>
+            <p>Азог — жестокий лидер орков, главный противник Торина.</p>
+        </div>
+
+        <button onclick="toggleCharacter('bolg')" class="character-button">Больг</button>
+        <div id="bolg" class="character-content">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.bolg.JPG">
+            </div>
+            <p>Больг — сын Азога, военачальник армии орков.</p>
+        </div>
+
+        <button onclick="toggleCharacter('gothmog')" class="character-button">Готмог</button>
+        <div id="gothmog" class="character-content">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.gotmog.JPG">
+            </div>
+            <p>Готмог — полководец Мордора в битве при Минас Тирите.</p>
+        </div>
+
     </div>
-    <p>Азог — жестокий лидер орков, главный противник Торина.</p>
-</div>
 
-<button onclick="toggleCharacter('bolg')" class="character-button">Больг</button>
-<div id="bolg" class="character-content">
-    <div class="character-gallery">
-        <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=800">
-    </div>
-    <p>Больг — сын Азога, военачальник армии орков.</p>
-</div>
-
-<button onclick="toggleCharacter('gothmog')" class="character-button">Готмог</button>
-<div id="gothmog" class="character-content">
-    <div class="character-gallery">
-        <img src="https://images.unsplash.com/photo-1500622944204-b135684e99fd?w=800">
-    </div>
-    <p>Готмог — полководец Мордора в битве при Минас Тирите.</p>
-</div>
-
-</div>
-
-<script>
-function toggleCharacter(id) {
-    const block = document.getElementById(id);
-    block.style.display = block.style.display === "block" ? "none" : "block";
-}
-</script>
-
+    <script src="../js/script.js"></script>
 </body>
 </html>

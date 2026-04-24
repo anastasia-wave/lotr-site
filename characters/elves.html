@@ -1,100 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Эльфы — Мир Средиземья</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #101010;
-            color: white;
-        }
-
-        .back {
-            display: inline-block;
-            margin: 20px;
-            color: white;
-            text-decoration: none;
-            background-color: #333;
-            padding: 10px 18px;
-            border-radius: 8px;
-        }
-
-        .back:hover {
-            background-color: #555;
-        }
-
-        h1 {
-            text-align: center;
-            margin: 10px 0 30px;
-        }
-
-        .characters-list {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .character-button {
-            width: 100%;
-            text-align: left;
-            padding: 16px 20px;
-            font-size: 22px;
-            background-color: #1f1f1f;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .character-button:hover {
-            background-color: #2e2e2e;
-        }
-
-        .character-content {
-            display: none;
-            background-color: #181818;
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-        .character-gallery {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 18px;
-        }
-
-        .character-gallery img {
-            width: 220px;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .character-description {
-            line-height: 1.6;
-            font-size: 18px;
-        }
-
-        @media (max-width: 700px) {
-            .character-gallery img {
-                width: 100%;
-                height: 190px;
-            }
-
-            .character-button {
-                font-size: 20px;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -119,8 +29,7 @@
         <button class="character-button" onclick="toggleCharacter('elrond')">Элронд</button>
         <div class="character-content" id="elrond">
             <div class="character-gallery">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800" alt="Элронд 1">
-                <img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=800" alt="Элронд 2">
+                <img src="../img/characters/ch.elrond.JPG">
             </div>
             <div class="character-description">
                 Элронд — владыка Ривенделла, один из мудрейших эльфов Средиземья.
@@ -132,8 +41,7 @@
         <button class="character-button" onclick="toggleCharacter('galadriel')">Галадриэль</button>
         <div class="character-content" id="galadriel">
             <div class="character-gallery">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800" alt="Галадриэль 1">
-                <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=800" alt="Галадриэль 2">
+                <img src="../img/characters/ch.galadriel.JPG">
             </div>
             <div class="character-description">
                 Галадриэль — владычица Лотлориэна, одна из самых могущественных
@@ -145,8 +53,7 @@
         <button class="character-button" onclick="toggleCharacter('thranduil')">Трандуил</button>
         <div class="character-content" id="thranduil">
             <div class="character-gallery">
-                <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=800" alt="Трандуил 1">
-                <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=800" alt="Трандуил 2">
+                <img src="../img/characters/ch.tranduil.JPG">
             </div>
             <div class="character-description">
                 Трандуил — король лесных эльфов и отец Леголаса.
@@ -158,8 +65,7 @@
         <button class="character-button" onclick="toggleCharacter('tauriel')">Тауриэль</button>
         <div class="character-content" id="tauriel">
             <div class="character-gallery">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800" alt="Тауриэль 1">
-                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="Тауриэль 2">
+                <img src="../img/characters/ch.tauriel.JPG">
             </div>
             <div class="character-description">
                 Тауриэль — эльфийка из Лихолесья, появляющаяся в кинотрилогии «Хоббит».
@@ -171,8 +77,7 @@
         <button class="character-button" onclick="toggleCharacter('arwen')">Арвен</button>
         <div class="character-content" id="arwen">
             <div class="character-gallery">
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800" alt="Арвен 1">
-                <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=800" alt="Арвен 2">
+                <img src="../img/characters/ch.arven.JPG">
             </div>
             <div class="character-description">
                 Арвен — дочь Элронда, возлюбленная Арагорна.
@@ -183,17 +88,6 @@
 
     </div>
 
-    <script>
-        function toggleCharacter(id) {
-            const block = document.getElementById(id);
-
-            if (block.style.display === "block") {
-                block.style.display = "none";
-            } else {
-                block.style.display = "block";
-            }
-        }
-    </script>
-
+    <script src="../js/script.js"></script>
 </body>
 </html>

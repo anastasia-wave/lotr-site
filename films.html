@@ -1,188 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фильмы Средиземья</title>
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: white;
-        }
-
-        .back {
-            position: fixed;   
-            top: 20px;       
-            left: 20px;      
-
-            color: white;
-            text-decoration: none;
-            background-color: #333;
-            padding: 10px 18px;
-            border-radius: 8px;
-
-            z-index: 1000;   
-        }
-
-        .back:hover {
-            background-color: #555;
-        }
-
-        .back:hover {
-            background-color: #555;
-        }
-
-        .film {
-            min-height: 100vh;
-            padding: 40px 0;
-            border-bottom: 1px solid #333;
-        }
-
-        .film-inner {
-            width: 100%;
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 0 40px;
-            box-sizing: border-box;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 28px;
-            font-size: 28px;
-        }
-
-        .movie-gallery {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding: 10px 0;
-            margin: 20px auto 30px;
-            max-width: 1180px;
-        }
-
-        .movie-gallery::-webkit-scrollbar {
-            height: 10px;
-        }
-
-        .movie-gallery::-webkit-scrollbar-track {
-            background: #1b1b1b;
-            border-radius: 10px;
-        }
-
-        .movie-gallery::-webkit-scrollbar-thumb {
-            background: #555;
-            border-radius: 10px;
-        }
-
-        .movie-gallery img {
-            min-width: 360px;
-            width: 360px;
-            height: 205px;
-            object-fit: cover;
-            border-radius: 12px;
-            flex-shrink: 0;
-            transition: 0.3s;
-        }
-
-        .movie-gallery img:hover {
-            transform: scale(1.02);
-        }
-
-        .film-text {
-            max-width: 1180px;
-            margin: 0 auto;
-            text-align: justify;
-            line-height: 1.7;
-            font-size: 18px;
-        }
-
-        .film-text p {
-            margin: 0 0 18px 0;
-            text-indent: 1.25cm;
-        }
-
-        .film-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 900px) {
-            .film-inner {
-                padding: 0 20px;
-            }
-
-            .movie-gallery img {
-                min-width: 300px;
-                width: 300px;
-                height: 180px;
-            }
-
-            .film-text {
-                font-size: 17px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .film {
-                padding: 30px 0;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            .movie-gallery img {
-                min-width: 260px;
-                width: 260px;
-                height: 155px;
-            }
-
-            .film-text {
-                font-size: 16px;
-            }
-
-            .film-text p {
-                text-indent: 1cm;
-            }
-        }
-
-        .contents {
-            max-width: 1180px;
-            margin: 20px auto 40px;
-            padding: 0 40px;
-        }
-
-        .contents h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .contents ol {
-            line-height: 1.8;
-            font-size: 18px;
-        }
-
-        .contents a {
-            color: #ddd;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
-        .contents a:hover {
-            color: gold;
-        }
-    </style>
 </head>
 
-<body>
+<body class="films-page">
     <a class="back" href="index.html">← На главную</a>
 
     <div class="contents">
@@ -364,11 +189,6 @@
         </div>
     </div>
 
-    <script>
-        function scrollGallery(e) {
-            e.preventDefault();
-            e.currentTarget.scrollLeft += e.deltaY;
-        }
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

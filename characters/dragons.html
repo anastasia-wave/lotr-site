@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Драконы — Мир Средиземья</title>
+    <link rel="icon" href="../img/ring.png">
+</head>
+<body class="race-page">
+    <header class="topbar">
+
+        <div class="topbar-left">
+            <img src="../img/llogo.png" alt="Мир Средиземья">
+        </div>
+
+        <nav class="topbar-nav">
+            <a href="../books.html">Книги</a>
+            <a href="../films.html">Фильмы</a>
+            <a href="characters.html" class="active">Персонажи</a>
+            <a href="../map.html">Карта</a>
+            <a href="../quiz.html">Тест</a>
+        </nav>
+        <button class="burger-btn" onclick="toggleMobileMenu()">☰</button>
+
+    </header>
+
+    <a class="back-button" href="characters.html">← К расам</a>
+
+    <h1 class="page-title">Драконы</h1>
+
+    <div class="characters-list">
+
+        <button class="character-button" onclick="toggleCharacter('smaug')">Смауг</button>
+        <div class="character-content" id="smaug">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.smaug.png" alt="Смауг">
+            </div>
+            <div class="character-description">
+                Смауг — один из самых известных драконов Средиземья и главный антагонист
+                заключительных частей трилогии «Хоббит». Он захватил Одинокую гору,
+                уничтожил процветающее королевство гномов и долгие годы охранял сокровища Эребора.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('glaurung')">Глаурунг</button>
+        <div class="character-content" id="glaurung">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.glaurung.jpg" alt="Глаурунг">
+            </div>
+            <div class="character-description">
+                Глаурунг — первый великий дракон, созданный Морготом в древние эпохи.
+                Он сыграл важную роль в легендариуме Толкина и стал одним из самых опасных
+                существ, служивших силам тьмы.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('ancalagon')">Анкалагон Чёрный</button>
+        <div class="character-content" id="ancalagon">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.ankalagon.jpg" alt="Анкалагон Чёрный">
+            </div>
+            <div class="character-description">
+                Анкалагон Чёрный — самый огромный и могущественный из крылатых драконов.
+                Он участвовал в Войне Гнева и считается одним из самых устрашающих существ
+                в истории Арды.
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

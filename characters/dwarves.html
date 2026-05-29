@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гномы — Мир Средиземья</title>
+    <link rel="icon" href="../img/ring.png">
+</head>
+<body class="race-page">
+    <header class="topbar">
+
+        <div class="topbar-left">
+            <img src="../img/llogo.png" alt="Мир Средиземья">
+        </div>
+
+        <nav class="topbar-nav">
+            <a href="../books.html">Книги</a>
+            <a href="../films.html">Фильмы</a>
+            <a href="characters.html" class="active">Персонажи</a>
+            <a href="../map.html">Карта</a>
+            <a href="../quiz.html">Тест</a>
+        </nav>
+        <button class="burger-btn" onclick="toggleMobileMenu()">☰</button>
+
+    </header>
+
+    <a class="back-button" href="characters.html">← К расам</a>
+
+    <h1 class="page-title">Гномы</h1>
+
+    <div class="characters-list">
+
+        <button onclick="toggleCharacter('thorin')" class="character-button">Торин Дубощит</button>
+        <div id="thorin" class="character-content">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.torin.jpg" alt="Торин Дубощит">
+            </div>
+            <p>Торин — наследник королевства Эребор, возглавляет поход к Одинокой горе.</p>
+        </div>
+
+        <button onclick="toggleCharacter('balin')" class="character-button">Балин</button>
+        <div id="balin" class="character-content">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.balin.JPG" alt="Балин">
+            </div>
+            <p>Балин — мудрый и опытный гном, один из спутников Бильбо.</p>
+        </div>
+
+        <button onclick="toggleCharacter('gimli')" class="character-button">Гимли</button>
+        <div id="gimli" class="character-content">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.gimly.JPG" alt="Гимли">
+            </div>
+            <p>Гимли — представитель гномов в Братстве кольца, верный друг Леголаса.</p>
+        </div>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

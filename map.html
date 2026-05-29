@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта Средиземья — Мир Средиземья</title>
+    <link rel="icon" href="img/ring.png">
+</head>
+<body class="map-page">
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+            <img src="img/llogo.png" alt="Мир Средиземья">
+        </div>
+
+        <nav class="topbar-nav">
+            <a href="books.html">Книги</a>
+            <a href="films.html">Фильмы</a>
+            <a href="characters/characters.html">Персонажи</a>
+            <a href="map.html" class="active">Карта</a>
+            <a href="quiz.html">Тест</a>
+        </nav>
+        <button class="burger-btn" onclick="toggleMobileMenu()">☰</button>
+
+    </header>
+
+    <a class="back quiz-back" href="index.html">← На главную</a>
+
+    <h1 class="page-title">Карта Средиземья</h1>
+
+    <div class="map-section">
+
+        <section class="info-panel" id="infoPanel">
+            <h2>Выберите область</h2>
+            <p>Наведите курсор на область карты и нажмите, чтобы открыть описание.</p>
+        </section>
+
+        <div class="map-area">
+
+
+            <div class="map-wrapper" id="mapWrapper">
+                <div class="map-stage" id="mapStage">
+                    <div class="map-image-box">
+                        <img class="map-image" src="img/map.png" alt="Карта Средиземья">
+
+                        <svg class="map-svg" viewBox="0 0 1532 948">
+                            <path
+                                class="svg-region eriador-region"
+                                data-region="eriador"
+                                d="M 145 75
+                                    C 250 35, 520 45, 760 130
+                                    C 900 190, 800 270, 780 355
+                                    C 700 395, 720 430, 710 400
+                                    C 760 420, 575 475, 430 400
+                                    C 270 420, 175 340, 140 235
+                                    C 128 165, 132 110, 145 75
+                                    Z">
+                            </path>
+
+                            <path
+                                class="svg-region shire-region"
+                                data-region="shire"
+                                d="M 355 195
+                                    C 380 175, 420 180, 445 210
+                                    C 470 240, 465 285, 435 310
+                                    C 405 335, 365 325, 345 295
+                                    C 325 260, 330 220, 355 195
+                                    Z">
+                            </path>
+
+                            <path
+                                class="svg-region rivendell-region"
+                                data-region="rivendell"
+                                d="M 725 145
+                                    C 755 128, 800 132, 830 160
+                                    C 857 188, 861 228, 837 255
+                                    C 807 285, 757 285, 725 258
+                                    C 697 230, 697 175, 725 145
+                                    Z">
+                            </path>
+
+                            <path
+                                class="svg-region rohan-region"
+                                data-region="rohan"
+                                d="M 710 455
+                                    C 765 420, 850 425, 905 475
+                                    C 955 520, 960 595, 915 640
+                                    C 860 630, 770 620, 715 615
+                                    C 665 590, 660 510, 710 455
+                                    Z">
+                            </path>
+
+                            <path
+                                class="svg-region gondor-region"
+                                data-region="gondor"
+                                d="M 760 650
+                                    C 845 720, 965 620, 1000 720
+                                    C 1000 755, 1000 760, 1000 760
+                                    C 970 800, 845 790, 770 830
+                                    C 700 860, 400 735, 500 650
+                                    Z">
+                            </path>
+
+                            <path
+                                class="svg-region mordor-region"
+                                data-region="mordor"
+                                d="M 1080 610
+                                    C 1160 575, 1275 590, 1345 655
+                                    C 1415 720, 1410 825, 1340 840
+                                    C 1260 940, 1135 850, 1065 855
+                                    C 1000 810, 995 675, 1080 610
+                                    Z">
+                            </path>
+
+                            <path
+                                class="svg-region rhovanion-region"
+                                data-region="rhovanion"
+                                d="M 1010 70
+                                    C 1110 35, 1180 30, 1150 205
+                                    C 1100 290, 1300 430, 1100 530
+                                    C 1040 530, 1125 530, 1025 530
+                                    C 935 500, 900 460, 860 365
+                                    C 900 250, 820 100, 880 80
+                                    Z">
+                            </path>
+
+                            <path
+                            class="svg-region erebor-region"
+                            data-region="erebor"
+                            d="M 1080 65
+                                C 1110 78, 1150 62, 1150 110
+                                C 1150 138, 1100 130, 1100 140
+                                C 1100 140, 1105 140, 1078 140
+                                C 1052 142, 1000 125, 1000 95
+                                Z">
+                            </path>
+
+                            <path
+                                class="svg-region mirkwood-region"
+                                data-region="mirkwood"
+                                d="M 1060 210
+                                    C 1100 175, 1095 185, 1135 240
+                                    C 1170 295, 1175 385, 1140 400
+                                    C 1100 400, 1035 400, 1100 400
+                                    C 1050 400, 1050 400, 1030 355
+                                    C 1000 285, 1000 235, 1050 210
+                                    Z">
+                            </path>
+
+                            <path
+                                class="svg-region enedwaith-region"
+                                data-region="enedwaith"
+                                d="M 410 410
+                                    C 470 380, 550 385, 605 430
+                                    C 655 470, 665 535, 625 580
+                                    C 575 625, 490 625, 435 590
+                                    C 385 550, 365 485, 410 410
+                                    Z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button type="button" id="zoomIn">Увеличить</button>
+                <button type="button" id="zoomOut">Уменьшить</button>
+                <button type="button" id="resetView">Сбросить вид</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const regionData = {
+            eriador: {
+                title: "Эриадор",
+                description: "Эриадор — большая область на северо-западе Средиземья. В её пределах находятся Шир, Бри, Ривенделл и древние земли Арнора.",
+                places: ["Шир", "Бри", "Ривенделл", "Земли Арнора"]
+            },
+            shire: {
+                title: "Шир",
+                description: "Шир — родина хоббитов и одно из самых мирных мест Средиземья. Именно отсюда начинается путь Бильбо в «Хоббите» и путешествие Фродо во «Властелине колец».",
+                places: ["Хоббитон", "Бэг-Энд", "Мичел Делвинг", "Байуотер"]
+            },
+            rivendell: {
+                title: "Ривенделл",
+                description: "Ривенделл — эльфийская обитель Элронда, важное место отдыха, совета и принятия решений.",
+                places: ["Дом Элронда", "Долина Ривенделла", "Бруинен", "Высокий перевал"]
+            },
+            mirkwood: {
+                title: "Лихолесье",
+                description: "Лихолесье — огромный и мрачный лес на востоке карты.",
+                places: ["Дворец Трандуила", "Лесная река", "Дол Гулдур", "Тёмные тропы леса"]
+            },
+            erebor: {
+                title: "Эребор и окрестности",
+                description: "Эребор, или Одинокая гора, является главным пунктом назначения в трилогии «Хоббит».",
+                places: ["Одинокая гора", "Дейл", "Эсгарот", "Железные холмы"]
+            },
+            rohan: {
+                title: "Рохан",
+                description: "Рохан — страна всадников и одно из главных королевств людей.",
+                places: ["Эдорас", "Хельмова Падь", "Вестфолд", "Равнины Рохана"]
+            },
+            gondor: {
+                title: "Гондор",
+                description: "Гондор — одно из самых могущественных человеческих королевств Средиземья.",
+                places: ["Минас Тирит", "Осгилиат", "Дол Амрот", "Пеленнорские поля"]
+            },
+            mordor: {
+                title: "Мордор",
+                description: "Мордор — земля Саурона, окружённая горами и насыщенная символами тьмы.",
+                places: ["Барад-дур", "Ородруин", "Минас Моргул", "Чёрные врата", "Нурн"]
+            },
+            fangorn: {
+                title: "Фангорн",
+                description: "Фангорн — древний лес энтов, связанный с Древобородом и событиями вокруг Изенгарда.",
+                places: ["Лес Фангорн", "Область энтов", "Пути к Изенгарду", "Места стоянки Древоборода"]
+            },
+            rhovanion: {
+                title: "Рованион",
+                description: "Рованион — крупная область на северо-востоке Средиземья, расположенная восточнее Мглистых гор. В неё входят Лихолесье, земли людей Севера, Дейл, Эсгарот и окрестности Одинокой горы.",
+                places: [
+                    "Лихолесье",
+                    "Эребор",
+                    "Дейл",
+                    "Эсгарот",
+                    "Земли людей Севера"
+                ]
+            },
+            enedwaith: {
+                title: "Энедвайт",
+                description: "Энедвайт — малонаселённая область между Эриадором и Роханом. Эти земли долгое время оставались дикими и мало контролировались королевствами людей.",
+                places: [
+                    "Старые тракты",
+                    "Холмы Энедвайта",
+                    "Пограничные земли",
+                    "Южные дороги"
+                ]
+            }
+        };
+
+        const infoPanel = document.getElementById("infoPanel");
+        const regions = document.querySelectorAll(".region, .svg-region");
+
+        regions.forEach(region => {
+            region.addEventListener("click", () => {
+                regions.forEach(r => r.classList.remove("active"));
+                region.classList.add("active");
+
+                const key = region.dataset.region;
+                const data = regionData[key];
+
+                if (!data) return;
+
+                infoPanel.innerHTML = `
+                    <h2>${data.title}</h2>
+                    <p>${data.description}</p>
+                    <p><strong>Основные объекты:</strong></p>
+                    <ul>
+                        ${data.places.map(place => `<li>${place}</li>`).join("")}
+                    </ul>
+                `;
+            });
+        });
+
+        const mapWrapper = document.getElementById("mapWrapper");
+        const mapStage = document.getElementById("mapStage");
+
+        let startScale = window.innerWidth <= 700 ? 0.25 : 0.6;
+        let scale = startScale;
+        let minScale = window.innerWidth <= 700 ? 0.22 : 0.45;
+        let maxScale = 2.2;
+        let translateX = 0;
+        let translateY = 0;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+
+        function updateTransform() {
+            mapStage.style.transform = `
+                translate(-50%, -50%)
+                translate(${translateX}px, ${translateY}px)
+                scale(${scale})
+            `;
+        }
+
+        function zoomAt(clientX, clientY, delta) {
+            const rect = mapWrapper.getBoundingClientRect();
+            const mouseX = clientX - rect.left - mapWrapper.clientWidth / 2;
+            const mouseY = clientY - rect.top - mapWrapper.clientHeight / 2;
+            const prevScale = scale;
+
+            scale += delta;
+
+            if (scale < minScale) scale = minScale;
+            if (scale > maxScale) scale = maxScale;
+
+            const scaleRatio = scale / prevScale;
+
+            translateX = mouseX - (mouseX - translateX) * scaleRatio;
+            translateY = mouseY - (mouseY - translateY) * scaleRatio;
+
+            updateTransform();
+        }
+
+        mapWrapper.addEventListener("wheel", (event) => {
+            event.preventDefault();
+            const delta = event.deltaY < 0 ? 0.08 : -0.08;
+            zoomAt(event.clientX, event.clientY, delta);
+        }, { passive: false });
+
+        mapWrapper.addEventListener("mousedown", (event) => {
+            isDragging = true;
+            startX = event.clientX - translateX;
+            startY = event.clientY - translateY;
+        });
+
+        window.addEventListener("mousemove", (event) => {
+            if (!isDragging) return;
+            translateX = event.clientX - startX;
+            translateY = event.clientY - startY;
+            updateTransform();
+        });
+
+        window.addEventListener("mouseup", () => {
+            isDragging = false;
+        });
+
+        mapWrapper.addEventListener("touchstart", (event) => {
+            if (event.touches.length !== 1) return;
+
+            isDragging = true;
+
+            startX = event.touches[0].clientX - translateX;
+            startY = event.touches[0].clientY - translateY;
+        }, { passive: false });
+
+        mapWrapper.addEventListener("touchmove", (event) => {
+            if (!isDragging || event.touches.length !== 1) return;
+
+            event.preventDefault();
+
+            translateX = event.touches[0].clientX - startX;
+            translateY = event.touches[0].clientY - startY;
+
+            updateTransform();
+        }, { passive: false });
+
+        mapWrapper.addEventListener("touchend", () => {
+            isDragging = false;
+        });
+
+        document.getElementById("zoomIn").addEventListener("click", () => {
+            const rect = mapWrapper.getBoundingClientRect();
+            zoomAt(rect.left + rect.width / 2, rect.top + rect.height / 2, 0.12);
+        });
+
+        document.getElementById("zoomOut").addEventListener("click", () => {
+            const rect = mapWrapper.getBoundingClientRect();
+            zoomAt(rect.left + rect.width / 2, rect.top + rect.height / 2, -0.12);
+        });
+
+        document.getElementById("resetView").addEventListener("click", () => {
+            scale = startScale;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+        });
+
+        updateTransform();
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

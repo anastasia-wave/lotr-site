@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эльфы — Мир Средиземья</title>
+    <link rel="icon" href="../img/ring.png">
+</head>
+<body class="race-page">
+    <header class="topbar">
+
+        <div class="topbar-left">
+            <img src="../img/llogo.png" alt="Мир Средиземья">
+        </div>
+
+        <nav class="topbar-nav">
+            <a href="../books.html">Книги</a>
+            <a href="../films.html">Фильмы</a>
+            <a href="characters.html" class="active">Персонажи</a>
+            <a href="../map.html">Карта</a>
+            <a href="../quiz.html">Тест</a>
+        </nav>
+        <button class="burger-btn" onclick="toggleMobileMenu()">☰</button>
+
+    </header>
+
+    <a class="back-button" href="characters.html">← К расам</a>
+
+    <h1 class="page-title">Эльфы</h1>
+
+    <div class="characters-list">
+
+        <button class="character-button" onclick="toggleCharacter('legolas')">Леголас</button>
+        <div class="character-content" id="legolas">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.legolas.jpg" alt="Леголас">
+            </div>
+            <div class="character-description">
+                Леголас — эльфийский принц Лихолесья и один из членов Братства кольца.
+                Он отличается меткостью, быстротой и верностью друзьям, а также
+                играет важную роль в борьбе против сил Саурона.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('elrond')">Элронд</button>
+        <div class="character-content" id="elrond">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.elrond.JPG" alt="Элронд">
+            </div>
+            <div class="character-description">
+                Элронд — владыка Ривенделла, один из мудрейших эльфов Средиземья.
+                Именно в его доме собирается совет, на котором принимается решение
+                о судьбе Кольца Всевластия.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('galadriel')">Галадриэль</button>
+        <div class="character-content" id="galadriel">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.galadriel.JPG" alt="Галадриэль">
+            </div>
+            <div class="character-description">
+                Галадриэль — владычица Лотлориэна, одна из самых могущественных
+                и древних эльфийских правительниц. Она помогает Братству кольца
+                и обладает великой мудростью.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('thranduil')">Трандуил</button>
+        <div class="character-content" id="thranduil">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.tranduil.JPG" alt="Трандуил">
+            </div>
+            <div class="character-description">
+                Трандуил — король лесных эльфов и отец Леголаса.
+                Он появляется в трилогии «Хоббит» как могущественный и гордый правитель,
+                заботящийся о своём народе.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('tauriel')">Тауриэль</button>
+        <div class="character-content" id="tauriel">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.tauriel.JPG" alt="Тауриэль">
+            </div>
+            <div class="character-description">
+                Тауриэль — эльфийка из Лихолесья, появляющаяся в кинотрилогии «Хоббит».
+                Она является храброй воительницей и участвует в ряде важных событий,
+                связанных с гномами и людьми.
+            </div>
+        </div>
+
+        <button class="character-button" onclick="toggleCharacter('arwen')">Арвен</button>
+        <div class="character-content" id="arwen">
+            <div class="character-gallery">
+                <img src="../img/characters/ch.arven.JPG" alt="Арвен">
+            </div>
+            <div class="character-description">
+                Арвен — дочь Элронда, возлюбленная Арагорна.
+                Её образ связан с темой любви, жертвы и выбора между бессмертием
+                и жизнью рядом с человеком.
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
